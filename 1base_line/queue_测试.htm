@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+
+		<script type="text/javascript" src="../jquery/js/jquery-1.10.2.min.js"></script>
+
+
+<script type="text/javascript">
+$(function () {
+	
+$("#show").click(function () {
+      var n = $("div").queue("fx");
+      $("span").text("Queue length is: " + n.length);
+});
+function runIt() {
+      $("div").show("slow");
+      $("div").animate({left:'+=200'},2000);
+      $("div").slideToggle(1000);
+      $("div").slideToggle("fast");
+      $("div").animate({left:'-=200'},1500);
+      $("div").hide("slow");
+      $("div").show(1200);
+      $("div").slideUp("normal", runIt);
+}
+runIt();
+
+$("#start").click(function () {
+      $("div").show("slow");
+      $("div").animate({left:'+=200'},5000);
+      $("div").queue(function () {
+          $(this).addClass("newcolor");
+          $(this).dequeue();
+      });
+      $("div").animate({left:'-=200'},1500);
+      $("div").queue(function () {
+          $(this).removeClass("newcolor");
+          $(this).dequeue();
+      });
+      $("div").slideUp();
+  });
+  $("#stop").click(function () {
+      $("div").queue("fx", []);
+      $("div").stop();
+  });
+  
+  
+
+  
+    
+});
+
+
+
+
+		</script>
+		
+		
+		
+	</head>
+	<body>
+<style>
+  div { margin:3px; width:40px; height:40px;
+        position:absolute; left:0px; top:30px; 
+        background:green; display:none; }
+  div.newcolor { background:blue; }
+  </style>
+  
+  
+<button id="show">Show Length of Queue</button>
+<span></span>
+
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+  <div></div>
+
+
+
+
+
+    <p><input type="button" value="Run"/></p>
+<div class="sss"></div>
+<script>
+jQuery.fx.interval = 100;
+
+$("input").click(function(){
+  $(".sss").toggle( 3000 );
+});
+  </script>
+  
+  
+  
+	</body>
+</html>

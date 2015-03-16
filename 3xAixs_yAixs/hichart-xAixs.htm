@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highstock Example</title>
+
+<script type="text/javascript" src="../jquery/js/jquery-1.10.2.min.js"></script>
+<script src="../../js/Highstock.js"></script>
+
+		<script type="text/javascript">
+$(function() {
+
+		// Create the chart
+		$('#container').highcharts({
+			
+
+			title : {
+				text : 'type:category是重点'
+			},
+			xAxis: {
+				type: 'category',//这里是重点
+          //categories: ['Jan', 'Feb', 'Mar', 'Apr' ]
+	    },
+      plotOptions: {  
+        series:{
+            turboThreshold:0 
+        }
+      },
+			series : [
+			{name : 'AAPL',
+				data : [				
+					{name:'Jan', y:67.79},
+					{name:'Feb' , y:27.79},
+					{name:'Mar', y:67.79},
+					{name:'Apr', y:37.79}
+					]
+			}
+			
+			]
+		});
+
+});
+
+
+//=======================================================
+
+$(function () {
+    $('#container1').highcharts({
+
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+
+        yAxis: {
+            type: 'logarithmic',
+            minorTickInterval: 'auto'
+        },
+
+        series: [{
+            data: [2, 5, 3, 7, 40, 3]
+        }]
+
+    });
+});
+
+//=======================================================
+$(function () {
+    $('#container3').highcharts({
+
+        chart: {
+            width: 400,
+            height: 400,
+            spacingRight: 20
+        },
+
+        xAxis: {
+            type: 'logarithmic',
+            min: 1,
+            max: 1000,
+            endOnTick: true,
+            tickInterval: 1,
+            minorTickInterval: 0.1,
+            gridLineWidth: 1
+        },
+
+        yAxis: {
+            type: 'logarithmic',
+            min: 1,
+            max: 1000,
+            tickInterval: 1,
+            minorTickInterval: 0.1,
+            title: {
+                text: null
+            }
+        },
+
+        legend: {
+            enabled: false
+        },
+
+        series: [{
+            data: [
+                [550, 870], [738, 362], [719, 711], [547, 665], [595, 197], [332, 144],
+                [581, 555], [196, 862], [6, 837], [400, 924], [888, 148], [785, 730]
+            ],
+            type: 'scatter'
+        }]
+
+    });
+});
+
+
+
+		</script>
+	</head>
+	<body>
+		
+
+<div id="container" style="height: 300px; min-width: 500px"></div>
+<div id="container1" style="height: 300px; min-width: 500px"></div>
+<div id="container3" style="height: 300px; min-width: 500px"></div>
+
+
+	</body>
+</html>

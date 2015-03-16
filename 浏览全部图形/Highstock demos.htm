@@ -1,0 +1,723 @@
+
+<!-- saved from url=(0036)http://www.highcharts.com/stock/demo -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		  <!--<base href="http://www.highcharts.com/stock/demo">--><base href=".">
+  
+  <meta name="keywords" content="highcharts, charts, javascript charts, ajax charts, plots, line charts, bar charts, pie charts, javascript plots, ajax plots">
+  <meta name="description" content="Highcharts - Interactive JavaScript charts for your web pages.">
+  <meta name="generator" content="Joomla! - Open Source Content Management">
+  <title>Highstock demos</title>
+  <link rel="stylesheet" href="./Highstock demos_files/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="./Highstock demos_files/css" type="text/css">
+  <link rel="stylesheet" href="./Highstock demos_files/font-awesome.css" type="text/css">
+  <link rel="stylesheet" href="./Highstock demos_files/template.css" type="text/css">
+  <style type="text/css">
+#hs-component {
+	background-color: #34343e;
+	padding: 0;
+}
+#hs-component > .container {
+	width: 100%;
+	padding: 0;
+}
+.img-thumbnail {
+	border: 0;
+}
+#hs-component .container {
+	/*width: 100%;*/
+	padding: 0;
+}
+#header {
+	background-color: #252530;
+	border-bottom: 5px solid #f6f6f6;
+}
+#demos .container,
+#header .container {
+	background-color: inherit;
+}
+#header h1 {
+	text-align: left;
+	margin: 0;
+	color: white;
+	margin: 20px 0;
+	text-transform: none;
+}
+#demos {
+	background-color: #f6f6f6;
+}
+#demos .row {
+	border-bottom: 1px solid #252530;
+	background-color: #34343e;
+}
+#demos .row:last-of-type {
+	border-bottom: 0;
+}
+h1 {
+	text-align: center;
+	margin-bottom: 1em;
+	font-weight: lighter;
+}
+.demo {
+	text-align: center;
+	margin: 10px 0;
+}
+.demo a {
+	font-weight: lighter;
+	color: white;
+	text-transform: 
+}
+.image-container {
+	height: 100%;
+	max-height: 250px;
+	background-color: white;
+	font: 0/0 a;
+}
+.dark-unica .image-container {
+	background-color: inherit;
+}
+.sand-signika .image-container {
+	background: url(http://www.highcharts.com/samples/graphics/sand.png);
+}
+.image-container::before {
+	content: ' ';
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+.image-container svg,
+.image-container img {
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+	max-height: 100%;
+	border-radius: 0;
+	padding: 0;
+	border: 0;
+	background: 0;
+	position: inherit !important;
+}
+.dark-unica .image-container img {
+	border: 1px solid white;
+}
+.demo h3 {
+	text-transform: none;
+}
+.row > .title {
+	background-color: #34343e;
+	color: white;
+	/*padding: 5px;*/
+}
+.row > .title > h2 {
+	margin: 0;
+	margin-top: 20px;
+}
+/*.row:hover .title {
+	background-color: #8085e8;
+}*/
+a.btn.btn-theme {
+	color: #eeeaea;
+	background-color: #34343e;
+	border: 1px solid #34343e;
+	border-bottom: 0;
+	border-radius: 0;
+	font-weight: normal;
+	margin: 0;
+	margin-right: 5px;
+}
+a.btn.btn-theme:hover {
+	color: #90ef7f;
+}
+a.btn.btn-theme.disabled {
+	background-color: #f6f6f6;
+	color: #313131;
+	opacity: 1;
+}
+.select {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.select label {
+	color: white;
+	font-weight: lighter;
+}
+.dropdown.theme > ul {
+	border-radius: 0;
+	border: 0;
+}
+@media (max-width: 400px) {
+	.demo {
+		width: 100%;
+	}
+	.demo-container > div {
+		width: 50%;
+	}
+	.image-container {
+       max-height: 100px;
+	}
+	.demo h3 {
+		text-align: left;
+	}
+}
+@media screen and (min-width: 400px) and (max-width: 768px) {
+	.image-container {
+		max-height: 200px;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	.demo-container {
+		/*border: 1px solid silver;*/
+		-webkit-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		-webkit-transition-property: transform;
+		transition-property: transform;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	}
+	.demo-container:hover {
+		-webkit-transform: scale(1.05);
+		transform: scale(1.05);
+	}
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+	.demo-container {
+		/*border: 1px solid silver;*/
+		-webkit-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		-webkit-transition-property: transform;
+		transition-property: transform;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	}
+	.demo-container:hover {
+		-webkit-transform: scale(1.05);
+		transform: scale(1.05);
+	}
+}
+@media screen and (min-width: 1200px) {
+	.demo-container {
+		/*border: 1px solid silver;*/
+		-webkit-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		-webkit-transition-property: transform;
+		transition-property: transform;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	}
+	.demo-container:hover {
+		-webkit-transform: scale(1.05);
+		transform: scale(1.05);
+	}
+}
+  </style>
+  <script src="./Highstock demos_files/jquery-1.7.2.js" type="text/javascript"></script>
+  <script src="./Highstock demos_files/bootstrap.min.js" type="text/javascript"></script>
+  <script src="./Highstock demos_files/script.js" type="text/javascript"></script>
+  <script type="text/javascript">
+/*! Lazy Load 1.9.3 - MIT license - Copyright 2010-2013 Mika Tuupola */
+!function(a,b,c,d){var e=a(b);a.fn.lazyload=function(f){function g(){var b=0;i.each(function(){var c=a(this);if(!j.skip_invisible||c.is(":visible"))if(a.abovethetop(this,j)||a.leftofbegin(this,j));else if(a.belowthefold(this,j)||a.rightoffold(this,j)){if(++b>j.failure_limit)return!1}else c.trigger("appear"),b=0})}var h,i=this,j={threshold:0,failure_limit:0,event:"scroll",effect:"show",container:b,data_attribute:"original",skip_invisible:!0,appear:null,load:null,placeholder:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"};return f&&(d!==f.failurelimit&&(f.failure_limit=f.failurelimit,delete f.failurelimit),d!==f.effectspeed&&(f.effect_speed=f.effectspeed,delete f.effectspeed),a.extend(j,f)),h=j.container===d||j.container===b?e:a(j.container),0===j.event.indexOf("scroll")&&h.bind(j.event,function(){return g()}),this.each(function(){var b=this,c=a(b);b.loaded=!1,(c.attr("src")===d||c.attr("src")===!1)&&c.is("img")&&c.attr("src",j.placeholder),c.one("appear",function(){if(!this.loaded){if(j.appear){var d=i.length;j.appear.call(b,d,j)}a("<img />").bind("load",function(){var d=c.attr("data-"+j.data_attribute);c.hide(),c.is("img")?c.attr("src",d):c.css("background-image","url('"+d+"')"),c[j.effect](j.effect_speed),b.loaded=!0;var e=a.grep(i,function(a){return!a.loaded});if(i=a(e),j.load){var f=i.length;j.load.call(b,f,j)}}).attr("src",c.attr("data-"+j.data_attribute))}}),0!==j.event.indexOf("scroll")&&c.bind(j.event,function(){b.loaded||c.trigger("appear")})}),e.bind("resize",function(){g()}),/(?:iphone|ipod|ipad).*os 5/gi.test(navigator.appVersion)&&e.bind("pageshow",function(b){b.originalEvent&&b.originalEvent.persisted&&i.each(function(){a(this).trigger("appear")})}),a(c).ready(function(){g()}),this},a.belowthefold=function(c,f){var g;return g=f.container===d||f.container===b?(b.innerHeight?b.innerHeight:e.height())+e.scrollTop():a(f.container).offset().top+a(f.container).height(),g<=a(c).offset().top-f.threshold},a.rightoffold=function(c,f){var g;return g=f.container===d||f.container===b?e.width()+e.scrollLeft():a(f.container).offset().left+a(f.container).width(),g<=a(c).offset().left-f.threshold},a.abovethetop=function(c,f){var g;return g=f.container===d||f.container===b?e.scrollTop():a(f.container).offset().top,g>=a(c).offset().top+f.threshold+a(c).height()},a.leftofbegin=function(c,f){var g;return g=f.container===d||f.container===b?e.scrollLeft():a(f.container).offset().left,g>=a(c).offset().left+f.threshold+a(c).width()},a.inviewport=function(b,c){return!(a.rightoffold(b,c)||a.leftofbegin(b,c)||a.belowthefold(b,c)||a.abovethetop(b,c))},a.extend(a.expr[":"],{"below-the-fold":function(b){return a.belowthefold(b,{threshold:0})},"above-the-top":function(b){return!a.belowthefold(b,{threshold:0})},"right-of-screen":function(b){return a.rightoffold(b,{threshold:0})},"left-of-screen":function(b){return!a.rightoffold(b,{threshold:0})},"in-viewport":function(b){return a.inviewport(b,{threshold:0})},"above-the-fold":function(b){return!a.belowthefold(b,{threshold:0})},"right-of-fold":function(b){return a.rightoffold(b,{threshold:0})},"left-of-fold":function(b){return!a.rightoffold(b,{threshold:0})}})}(jQuery,window,document);
+$(function() {
+    $("img.lazy").lazyload({
+        threshold: 200,
+        placeholder: "/components/com_demo/assets/images/others/placeholder.svg"
+    });
+});
+  </script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" sizes="57x57" href="http://www.highcharts.com/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="http://www.highcharts.com/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="http://www.highcharts.com/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="http://www.highcharts.com/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="http://www.highcharts.com/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="http://www.highcharts.com/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="http://www.highcharts.com/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="http://www.highcharts.com/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="http://www.highcharts.com/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="http://www.highcharts.com/favicon-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="http://www.highcharts.com/favicon-160x160.png" sizes="160x160">
+		<link rel="icon" type="image/png" href="http://www.highcharts.com/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="http://www.highcharts.com/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="http://www.highcharts.com/favicon-32x32.png" sizes="32x32">
+		<meta name="msapplication-TileColor" content="#2b5797">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		
+	</head>
+	<body>
+		<div id="menu">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<a class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				            <span class="sr-only">Toggle navigation</span>
+          				</a>
+						<a class="navbar-brand" href="http://www.highcharts.com/" title="Highcharts">
+							<img src="./Highstock demos_files/logo.svg" alt="Highcharts">
+						</a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<div id="menu-container">
+							<div id="menu-second" class="hidden-xs">
+								
+<ul class="nav navbar-nav pull-right">
+<li class="item-112"><a href="http://www.highcharts.com/about">About Us</a></li><li class="item-113 deeper dropdown"><a href="http://www.highcharts.com/stock/demo#" class="dropdown-toggle" data-toggle="dropdown">Our Products <span class="toggle-arrow"></span></a>
+<ul class="dropdown-menu" role="menu"><li class="item-121"><a href="http://www.highcharts.com/products/highcharts">Highcharts</a></li><li class="item-122"><a href="http://www.highcharts.com/products/highstock">Highstock</a></li><li class="item-210"><a href="http://www.highcharts.com/products/highmaps">Highmaps</a></li><li class="item-213"><a href="http://cloud.highcharts.com/">Highcharts Cloud</a></li><li class="item-123"><a href="http://highslide.com/">Highslide JS</a></li></ul></li><li class="item-114"><a href="http://www.highcharts.com/contact-email">Contact</a></li></ul>
+
+								<div class="clearfix"></div>
+							</div>
+							<div id="menu-main">
+								
+<ul class="nav navbar-nav pull-right">
+<li class="item-101"><a href="http://www.highcharts.com/">Home</a></li><li class="item-103 active deeper dropdown"><a href="http://www.highcharts.com/stock/demo#" class="dropdown-toggle" data-toggle="dropdown">Demo <span class="toggle-arrow"></span></a>
+<ul class="dropdown-menu" role="menu"><li class="item-106"><a href="http://www.highcharts.com/demo">Highcharts demos</a></li><li class="item-107 current active"><a href="./Highstock demos_files/Highstock demos.htm">Highstock demos</a></li><li class="item-205"><a href="http://www.highcharts.com/maps/demo">Highmaps demo</a></li></ul></li><li class="item-108 deeper dropdown"><a href="http://www.highcharts.com/stock/demo#" class="dropdown-toggle" data-toggle="dropdown">Docs <span class="toggle-arrow"></span></a>
+<ul class="dropdown-menu" role="menu"><li class="item-128"><a href="http://www.highcharts.com/docs">General Documentation</a></li><li class="item-124"><a href="http://api.highcharts.com/highcharts">Highcharts API Reference</a></li><li class="item-125"><a href="http://api.highcharts.com/highstock">Highstock API Reference</a></li><li class="item-211"><a href="http://api.highcharts.com/highmaps">Highmaps API Reference</a></li><li class="item-126"><a href="http://www.highcharts.com/documentation/compatibility">Compatibility</a></li><li class="item-127"><a href="http://www.highcharts.com/documentation/changelog">Changelog</a></li></ul></li><li class="item-109 deeper dropdown"><a href="http://www.highcharts.com/stock/demo#" class="dropdown-toggle" data-toggle="dropdown">Support <span class="toggle-arrow"></span></a>
+<ul class="dropdown-menu" role="menu"><li class="item-110"><a href="http://www.highcharts.com/support">Support</a></li><li class="item-129"><a href="http://www.highcharts.com/support/roadmap">Roadmap</a></li><li class="item-201"><a href="http://www.highcharts.com/download">Download</a></li><li class="item-208"><a href="http://forum.highcharts.com/">Forum</a></li></ul></li><li class="item-111"><a href="http://www.highcharts.com/plugin-registry">Plugins</a></li><li class="item-115"><a href="http://shop.highsoft.com/">Shop</a></li></ul>
+
+								<div class="clearfix"></div>
+							</div>
+							<div id="mobile-second" class="visible-xs">
+								
+<ul class="nav navbar-nav pull-right">
+<li class="item-112"><a href="http://www.highcharts.com/about">About Us</a></li><li class="item-113 deeper dropdown"><a href="http://www.highcharts.com/stock/demo#" class="dropdown-toggle" data-toggle="dropdown">Our Products <span class="toggle-arrow"></span></a>
+<ul class="dropdown-menu" role="menu"><li class="item-121"><a href="http://www.highcharts.com/products/highcharts">Highcharts</a></li><li class="item-122"><a href="http://www.highcharts.com/products/highstock">Highstock</a></li><li class="item-210"><a href="http://www.highcharts.com/products/highmaps">Highmaps</a></li><li class="item-213"><a href="http://cloud.highcharts.com/">Highcharts Cloud</a></li><li class="item-123"><a href="http://highslide.com/">Highslide JS</a></li></ul></li><li class="item-114"><a href="http://www.highcharts.com/contact-email">Contact</a></li></ul>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div id="hs-slider">
+			<div class="container">
+				
+			</div>
+		</div>
+		<div id="hs-clients">
+			<div class="container">
+				
+			</div>
+		</div>		
+		<div id="hs-component">
+								<div class="container">
+						<div id="header" class="hidden-xs col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="container">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<h1>Highstock Demos</h1>
+			<div class="btn-group theme">
+																				<a class="btn btn-theme disabled" href="http://www.highcharts.com/stock/demo#">Default</a>
+																																					<a class="btn btn-theme" href="http://www.highcharts.com/stock/demo/dark-unica">Dark Unica</a>
+																																					<a class="btn btn-theme" href="http://www.highcharts.com/stock/demo/sand-signika">Sand Signika</a>
+																																					<a class="btn btn-theme" href="http://www.highcharts.com/stock/demo/grid-light">Grid Light</a>
+												</div>
+		</div>
+	</div>
+</div>
+<div id="demos" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 default">
+	<div class="container">
+			<div class="visible-xs row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="select">
+						<label>Select Theme: </label>
+						<select id="switcher-selector">
+													</select>
+					</div>
+				</div>
+			</div>
+							<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
+												<h2 id="general">General</h2>
+					</div> 
+										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/basic-line">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/basic-line-default.svg" alt=" Single line series" src="./Highstock demos_files/basic-line-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Single line series</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/candlestick-and-volume">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/candlestick-and-volume-default.svg" alt=" Two panes, candlestick and volume" src="./Highstock demos_files/candlestick-and-volume-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Two panes, candlestick and volume</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-sm visible-xs"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/compare">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/compare-default.svg" alt=" Compare multiple series" src="./Highstock demos_files/compare-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Compare multiple series</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-lg visible-md"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/data-grouping">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/data-grouping-default.svg" alt=" 52,000 points with data grouping" src="./Highstock demos_files/data-grouping-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> 52,000 points with data grouping</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-sm visible-xs"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/lazy-loading">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/lazy-loading-default.svg" alt=" 1.7 million points with async loading" src="./Highstock demos_files/lazy-loading-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> 1.7 million points with async loading</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/intraday-area">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/intraday-area-default.svg" alt=" Intraday area" src="./Highstock demos_files/intraday-area-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Intraday area</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-lg visible-md"></div><div class="clearfix visible-sm visible-xs"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/intraday-breaks">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/intraday-breaks-default.svg" alt=" Intraday with breaks" src="./Highstock demos_files/intraday-breaks-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Intraday with breaks</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/intraday-candlestick">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/intraday-candlestick-default.svg" alt=" Intraday candlestick" src="./Highstock demos_files/intraday-candlestick-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Intraday candlestick</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-sm visible-xs"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/flags-general">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/flags-general-default.svg" alt=" Flags marking events" src="./Highstock demos_files/flags-general-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Flags marking events</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-lg visible-md"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/dynamic-update">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/dynamic-update-default.svg" alt=" Dynamically updated data" src="./Highstock demos_files/dynamic-update-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Dynamically updated data</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-sm visible-xs"></div>				</div>
+							<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
+												<h2 id="chart-types">Chart types</h2>
+					</div> 
+										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/line-markers">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/line-markers-default.svg" alt=" Line with markers and shadow" src="./Highstock demos_files/line-markers-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Line with markers and shadow</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/spline">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/spline-default.svg" alt=" Spline" src="./Highstock demos_files/spline-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Spline</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-sm visible-xs"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/step-line">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/step-line-default.svg" alt=" Step line" src="./Highstock demos_files/step-line-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Step line</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-lg visible-md"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/area">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/area-default.svg" alt=" Area" src="./Highstock demos_files/area-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Area</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-sm visible-xs"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/areaspline">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/areaspline-default.svg" alt=" Area spline" src="./Highstock demos_files/areaspline-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Area spline</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/arearange">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/arearange-default.svg" alt=" Area range" src="./Highstock demos_files/arearange-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Area range</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-lg visible-md"></div><div class="clearfix visible-sm visible-xs"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/areasplinerange">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/areasplinerange-default.svg" alt=" Area spline range" src="./Highstock demos_files/areasplinerange-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Area spline range</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/candlestick">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/candlestick-default.svg" alt=" Candlestick" src="./Highstock demos_files/candlestick-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Candlestick</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-sm visible-xs"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/ohlc">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/ohlc-default.svg" alt=" OHLC" src="./Highstock demos_files/ohlc-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> OHLC</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-lg visible-md"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/column">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/column-default.svg" alt=" Column" src="./Highstock demos_files/column-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Column</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-sm visible-xs"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/columnrange">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/columnrange-default.svg" alt=" Column range" src="./Highstock demos_files/columnrange-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Column range</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/markers-only">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/markers-only-default.svg" alt=" Point markers only" src="./Highstock demos_files/markers-only-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Point markers only</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-lg visible-md"></div><div class="clearfix visible-sm visible-xs"></div>				</div>
+							<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
+												<h2 id="various-features">Various features</h2>
+					</div> 
+										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/yaxis-plotlines">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/yaxis-plotlines-default.svg" alt=" Plot lines on Y axis" src="./Highstock demos_files/yaxis-plotlines-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Plot lines on Y axis</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/yaxis-plotbands">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/yaxis-plotbands-default.svg" alt=" Plot bands on Y axis" src="./Highstock demos_files/yaxis-plotbands-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Plot bands on Y axis</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-sm visible-xs"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/yaxis-reversed">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/yaxis-reversed-default.svg" alt=" Reversed Y axis" src="./Highstock demos_files/yaxis-reversed-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Reversed Y axis</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-lg visible-md"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/styled-scrollbar">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/styled-scrollbar-default.svg" alt=" Styled scrollbar" src="./Highstock demos_files/styled-scrollbar-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Styled scrollbar</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-sm visible-xs"></div>					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/scrollbar-disabled">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/scrollbar-disabled-default.svg" alt=" Disabled scrollbar" src="./Highstock demos_files/scrollbar-disabled-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Disabled scrollbar</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/navigator-disabled">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/navigator-disabled-default.svg" alt=" Disabled navigator" src="./Highstock demos_files/navigator-disabled-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Disabled navigator</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-lg visible-md"></div><div class="clearfix visible-sm visible-xs"></div>				</div>
+							<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 title">
+												<h2 id="flags">Flags</h2>
+					</div> 
+										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/flags-placement">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/flags-placement-default.svg" alt=" Flags placement" src="./Highstock demos_files/flags-placement-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Flags placement</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 demo">
+						<a href="http://www.highcharts.com/stock/demo/flags-shapes">
+							<div class="demo-container">
+																<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-container">
+									<img class="lazy img-thumbnail" data-original="/components/com_demo/assets/images/highstock/flags-shapes-default.svg" alt=" Flags shapes and colors" src="./Highstock demos_files/flags-shapes-default.svg" style="display: inline-block;">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h3> Flags shapes and colors</h3></div>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix visible-sm visible-xs"></div>				</div>
+						<script>
+				// Bind event to style change switcher
+				jQuery('#switcher-selector').bind('change', function() {
+					var url = jQuery(this).val(); // get selected value
+					if (url) { // require a URL
+						window.location = url; // redirect
+					}
+					return false;
+				});
+			</script>
+		</div>
+	</div>
+</div>
+
+					</div>
+						
+		<div id="hs-below">
+			<div class="container">
+				
+			</div>
+		</div>
+		<div id="hs-bottom">
+			<div class="container">
+				
+			</div>
+		</div>
+		<div id="footer">
+			<div class="container">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">								
+					<div id="zt-footer-copy">
+						© 2015 Highcharts. All rights reserved.					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="socials">
+													<div>
+<a href="https://www.facebook.com/Highcharts" title="Facebook" class="social-icon"><i class="fa fa-facebook"></i></a>
+<a href="https://twitter.com/Highcharts" title="Twitter" class="social-icon"><i class="fa fa-twitter"></i></a>
+<a href="http://www.linkedin.com/company/highsoft-solutions-as" title="LinkedIn" class="social-icon"><i class="fa fa-linkedin"></i></a>
+<a href="https://github.com/highslide-software/highcharts.com" title="Github" class="social-icon"><i class="fa fa-github"></i></a>
+</div>
+											</div>
+				</div>
+			</div>
+		</div>
+	
+</body></html>

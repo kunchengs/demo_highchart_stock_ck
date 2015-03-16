@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highstock Example</title>
+
+
+<script type="text/javascript" src="../jquery/js/jquery-1.10.2.min.js"></script>
+<script src="../../js/Highstock.js"></script>
+
+<script src="../plugins/multicolor_series.js"></script>
+
+		
+<script type="text/javascript">
+$(function () {
+	
+    var colors = Highcharts.getOptions().colors;
+	
+    var chart = new Highcharts.Chart({
+        chart: {
+            renderTo: 'container',
+            type: 'coloredarea',
+            zoomType: 'xy',
+            borderWidth: 5,
+            borderColor: '#e8eaeb',
+            borderRadius: 0,
+            backgroundColor: '#f7f7f7'
+        },
+        title: {
+            style: {
+                'fontSize': '1em'
+            },
+            useHTML: true,
+            x: -27,
+            y: 8,
+            text: '<span class="chart-title">Multicolor series<span class="chart-href"> <a href="http://www.blacklabel.pl/highcharts" target="_blank"> Black Label </a> </span> <span class="chart-subtitle">plugin by </span></span>'
+        },
+        series: [{
+            type: 'coloredarea',
+            data: [{
+                y: 200,
+                segmentColor: colors[0]
+            }, {
+                y: 210,
+                segmentColor: 'rgba(120,255,120,0.5)'
+            }, {
+                y: 210,
+                segmentColor: 'rgba(255,0,0,0.5)'
+            }, {
+                y: 180,
+                segmentColor: 'rgba(120, 120, 250, 0.9)'
+            }, {
+                y: 180,
+                segmentColor: 'red'
+            }]
+        }]
+    });
+});
+
+
+
+		</script>
+	</head>
+	<body>
+
+<div id="container" style="height: 500px; min-width: 500px">
+	[1183939200000,40.71],
+[1184025600000,40.38],
+[1184112000000,40.82],
+[1184198400000,41.55],
+[1184284800000,41.18],
+[1184544000000,41.06],
+[1184630400000,41.47],
+[1184716800000,41.39],
+[1184803200000,42.2],
+[1184889600000,41.61],
+[1185148800000,42.36],
+[1185235200000,41.79],
+[1185321600000,41.72],
+[1185408000000,41.19],
+[1185494400000,40.39],
+	
+	</div>
+	</body>
+</html>

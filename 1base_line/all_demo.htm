@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+
+<script src="../jquery/js/jquery-1.10.2.min.js"></script>
+<script src="../../js/highstock.js"></script>
+<script src="../../js/highcharts-more.js"></script>
+
+<script src="../data_ck.js"></script>
+
+<script type="text/javascript">
+$(function () {
+    var chart;
+    $(document).ready(function() {
+        chart = new Highcharts.StockChart({
+            chart: {
+                renderTo: 'container',
+              	title: {
+               		 text: 'highcharts图形组合'
+            		}
+            }, 
+            xAxis: {        },
+            yAxis: {
+                title: {
+                    text: 'Nuclear weapon states'
+                }
+            },
+            tooltip: {
+            	
+            },
+            plotOptions: {
+            	
+            	series:{
+            		turboThreshold:0
+            		}
+            },
+            series: [{
+                name: 'ADBE',
+                data: may2006,
+                type: 'column'
+            }, {
+                name: 'google',
+                data: may20063,
+                type: 'line'
+            }, {
+                name: 'MSFT',
+                data: may20062,
+                type: 'scatter'
+            }, {
+                name: 'MSFT',
+            		center: [100, 80],
+                data: may20062,
+                type: 'pie',
+            }]
+        });
+    });
+    
+});
+		</script>
+	</head>
+	<body>
+
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>

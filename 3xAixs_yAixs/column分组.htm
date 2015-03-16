@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highstock Example</title>
+
+
+<script type="text/javascript" src="../jquery/js/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="../data_ck.js"></script>
+<script src="../../js/highstock.js"></script>
+
+		<script type="text/javascript">
+$(function() {
+
+var demoLabel = {
+            enabled: true,
+            rotation: -90,
+            color: '#FFFFFF',
+            align: 'right',
+            x: 4,
+            y: 10,
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif',
+                textShadow: '0 0 3px black'
+            },
+            formatter :function(){
+            	if(this.point.code ){
+            		return this.point.code ;
+            	}else{            		
+            		return this.point.y ;
+            	}
+            }
+        };
+        
+		// Create the chart
+		$('#container').highcharts({
+
+	
+			xAxis: {
+	             categories: [
+                    'Jan',
+                    'Feb',
+                    'Mar',
+                    'Apr'
+                ]
+	    },
+	    yAxis: [
+				 {id:'id1111',
+				 	title: {
+						text: 'y1111111'
+					},
+		            labels: {
+		                align: 'right',
+		                x: -3
+		            },
+			        lineWidth: 2
+			  },
+			    {id:'id2222',
+			    	opposite:true,
+			    	title: {
+						text: 'y222222222'
+								},
+		            labels: {
+		                align: 'right',
+		                x: -3
+		            },
+			        lineWidth: 2
+			    }],
+			    
+			    
+			series : [			
+			{name : 'AAPL',
+				type:'column',
+        yAxis: 0,
+        dataLabels:demoLabel,
+				data : [{y:6, code:'33aaa3'},{y:2, code:'hello'},5,7]
+			},
+			{name : 'bbbbbbbbb',
+				type:'column',
+        yAxis: 0,
+        dataLabels: demoLabel,
+				data : [{y:6, code:'哈哈哈'},6,4,2]
+			},
+			{name : 'ccccccc',
+				type:'column',
+        yAxis: 0,
+        dataLabels: demoLabel,
+				data : [{y:6, code:'ccccccc'},null,6,null,5]
+			},
+			{name : 'ddddd',
+				type:'line',
+				data : [3,4,5,6,17,19],
+        yAxis: 1
+				
+			}
+			
+			]
+		});
+
+});
+
+		</script>
+	</head>
+	<body>
+
+<div id="container" style="height: 500px; min-width: 500px"></div>
+	</body>
+</html>

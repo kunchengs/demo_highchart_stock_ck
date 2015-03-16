@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+
+<script type="text/javascript" src="../jquery/js/jquery-1.10.2.min.js"></script>
+<script src="../../js/highstock.js"></script>
+<script src="../plugins/chart-plugins.js"></script>
+
+
+<script type="text/javascript">
+$(function () {
+	
+	var colors = Highcharts.getOptions().colors;
+	var data = [];
+	for(var i=0; i<= 50;i++){
+		var temp={};
+		temp.x= Date.UTC()+i*1000*36000;
+		temp.y= 101+i ;
+		temp.name = colors[i]
+		temp.color=colors[i];
+		
+		data.push(temp);
+	}
+	
+      $('#container').highcharts('StockChart', {
+            chart: {
+                type: 'column'
+            }, 
+
+            series: [{
+                name: '颜色',
+                //colorByPoint: true,
+                data: data
+            }]
+        });
+    
+});
+
+
+
+
+		</script>
+	</head>
+	<body>
+
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>

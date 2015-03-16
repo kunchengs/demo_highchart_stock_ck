@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highstock Example</title>
+
+
+<script type="text/javascript" src="../jquery/js/jquery-1.10.2.min.js"></script>
+<script src="../../js/Highstock.js"></script>
+<script src="../../js/highcharts-more.js"></script>
+
+		<script type="text/javascript">
+		$(function () {
+
+	var ranges = [
+			[1246406400000, 1.95, 2.05],
+			[1246492800000, 1.95, 2.05],
+			[1246492800001, null, null],
+			
+			[1246752000000, 1.95, 2.05],
+			[1246838400000, 1.95, 2.05],
+			[1246838400001, null, null]
+			
+		],
+    ranges2 = [
+			[1246579200000, 0.95, 1.05],
+			[1246665600000, 0.95, 1.05],
+			[1246665600001, null, null],
+			
+			[1246924800000, 0.95, 1.05],
+			[1247011200000, 0.95, 1.05],
+			[1247011200001, null, null]
+		],
+    ranges3 = [
+			[1247097600000, 1.95, 2.05],
+			[1247184000000, 1.95, 2.05],
+			[1247184000001, null, null]
+			
+		],
+		
+		  
+		averages = [
+			{x:1246406400000, y:2, fno:'B-2316'},
+			{x:1246492800000, y:2, fno:'B-2316'},
+			{x:1246579200000, y:1, fno:''},
+			{x:1246665600000, y:1, fno:''},
+			
+			
+			{x:1246752000000, y:2, fno:'B-2316'},
+			{x:1246838400000, y:2, fno:'B-2316'},
+			{x:1246924800000, y:1, fno:''},
+			{x:1247011200000, y:1, fno:''},
+			
+			{x:1247097600000, y:2, fno:'B-2316'},
+			{x:1247184000000, y:2, fno:'B-2316'}
+			
+		];
+
+   
+    
+    	//$('#container').highcharts({
+    	$('#container').highcharts('StockChart',{
+		    title: {
+		        text: 'July temperatures'
+		    },
+		
+		    xAxis: {
+		        type: 'datetime'
+		    },
+		    
+		    yAxis: {
+		        title: {
+		            text: null
+		        }
+		        ,tickInterval:1
+		    },
+        plotOptions: {
+            arearange: {
+                dataLabels: {
+                    enabled: false
+                }
+                ,enableMouseTracking: false
+            }
+            ,line: {
+                    dataLabels: {
+                        enabled: true
+                        ,formatter:function(){
+                        	return this.point.fno;
+                        }
+                    }
+                }
+        },
+		
+		    tooltip: {
+		        crosshairs: false,
+		        //shared: true,
+		        //valueSuffix: '°C'
+		    },
+		    
+		    legend: {
+		    },
+		
+		    series: [		    
+		    {id:'2161',
+		    	name: 'Temperature',
+		    	dashStyle:'ShortDashDot',
+		    	color: '#bbbbbb',
+		    	data: averages,
+		    	zIndex: 0
+		    } ,{
+		        name: 'Range',
+		        data: ranges,
+		        type: 'arearange',
+		        //lineWidth: 0,
+		    	  linkedTo: '2161',
+		    	  color: '#da4f49',
+		    	  fillOpacity: 1,
+		    	  zIndex: 1
+		    }, {
+		        name: 'Range2',
+		        data: ranges2,
+		        type: 'arearange',
+		        //lineWidth: 0,
+		    	linkedTo: '2161',
+		    	color: '#faa732',
+		    	fillOpacity: 1,
+		    	zIndex: 1
+		    }, {
+		        name: 'Range3',
+		        data: ranges3,
+		        type: 'arearange',
+		        //lineWidth: 0,
+		    	linkedTo: '2161',
+		    	color: '#468847',
+		    	fillOpacity: 1,
+		    	zIndex: 1
+		    }
+//===================================
+
+
+
+//===================================
+
+		    
+		    ]
+		
+		});
+    
+});
+
+
+		</script>
+	</head>
+	<body>
+		
+		
+
+<div id="container" style="height: 500px; min-width: 500px"></div>
+	</body>
+</html>

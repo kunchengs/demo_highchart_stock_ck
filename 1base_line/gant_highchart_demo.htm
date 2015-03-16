@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+
+<script src="../jquery/js/jquery-1.10.2.min.js"></script>
+<script src="../../js/Highstock.js"></script>
+<script src="../../js/highcharts-more.js"></script>
+
+<script type="text/javascript">
+$(function () {
+// Define tasks
+var tasks = [{
+    name: 'Sleep',
+    intervals: [{ // From-To pairs
+        from: Date.UTC(0, 0, 0, 0),
+        to: Date.UTC(0, 0, 0, 6)
+    }, {
+        from: Date.UTC(0, 0, 0, 22),
+        to: Date.UTC(0, 0, 0, 24)
+    }]
+}, {
+    name: 'Family time',
+    intervals: [{ // From-To pairs
+        from: Date.UTC(0, 0, 0, 6),
+        to: Date.UTC(0, 0, 0, 8)
+    }, {
+        from: Date.UTC(0, 0, 0, 16),
+        to: Date.UTC(0, 0, 0, 22)
+    }]
+}, {
+    name: 'Eat',
+    intervals: [{ // From-To pairs
+        from: Date.UTC(0, 0, 0, 7),
+        to: Date.UTC(0, 0, 0, 8),
+        label: 'Breakfast'
+    }, {
+        from: Date.UTC(0, 0, 0, 12),
+        to: Date.UTC(0, 0, 0, 12, 30)
+    }, {
+        from: Date.UTC(0, 0, 0, 16),
+        to: Date.UTC(0, 0, 0, 17),
+        label: 'Dinner'
+    }, {
+        from: Date.UTC(0, 0, 0, 20, 30),
+        to: Date.UTC(0, 0, 0, 21)
+    }]
+}, {
+    name: 'Work',
+    intervals: [{ // From-To pairs
+        from: Date.UTC(0, 0, 0, 8),
+        to: Date.UTC(0, 0, 0, 16)
+    }]
+}];
+
+// Define milestones
+var milestones = [{
+    name: 'Get to bed',
+    time: Date.UTC(0, 0, 0, 22),
+    task: 1,
+    marker: {
+        symbol: 'triangle',
+        lineWidth: 1,
+        lineColor: 'black',
+        radius: 8
+    }
+}];
+
+// re-structure the tasks into line seriesvar series = [];
+var series = [];
+$.each(tasks.reverse(), function(i, task) {
+    var item = {
+        name: task.name,
+        data: []
+    };
+    $.each(task.intervals, function(j, interval) {
+        item.data.push({
+            x: interval.from,
+            y: i,
+            label: interval.label,
+            from: interval.from,
+            to: interval.to
+        }, {
+            x: interval.to,
+            y: i,
+            from: interval.from,
+            to: interval.to
+        });
+        
+        // add a null value between intervals
+        if (task.intervals[j + 1]) {
+            item.data.push(
+                [(interval.to + task.intervals[j + 1].from) / 2, null]
+            );
+        }
+
+    });
+
+    series.push(item);
+});
+
+// restructure the milestones
+$.each(milestones, function(i, milestone) {
+    var item = $.extend(milestone, {
+        data: [[
+            milestone.time,
+            milestone.task
+        ]],
+        type: 'scatter'
+    });
+    series.push(item);
+});
+
+
+// create the chart
+var chart = new Highcharts.Chart({
+
+    chart: {
+        renderTo: 'container'
+    },
+    
+    title: {
+        text: 'Daily activities'
+    },
+
+    xAxis: {
+        type: 'datetime'
+    },
+
+    yAxis: {
+        tickInterval: 1,
+        labels: {
+            formatter: function() {
+                if (tasks[this.value]) {
+                    return tasks[this.value].name;
+                }
+            }
+        },
+        startOnTick: false,
+        endOnTick: false,
+        title: {
+            text: 'Activity'
+        },
+            minPadding: 0.2,
+                maxPadding: 0.2
+    },
+
+    legend: {
+        enabled: false
+    },
+
+    tooltip: {
+        formatter: function() {
+            return '<b>'+ tasks[this.y].name + '</b><br/>' +
+                Highcharts.dateFormat('%H:%M', this.point.options.from)  +
+                ' - ' + Highcharts.dateFormat('%H:%M', this.point.options.to); 
+        }
+    },
+
+    plotOptions: {
+        line: {
+            lineWidth: 9,
+            marker: {
+                enabled: false
+            },
+            dataLabels: {
+                enabled: true,
+                align: 'left',
+                formatter: function() {
+                    return this.point.options && this.point.options.label;
+                }
+            }
+        }
+    },
+
+    series: series
+
+});
+    
+});
+		</script>
+	</head>
+	<body>
+
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>
