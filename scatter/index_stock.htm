@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="../jquery/js/jquery-1.10.2.min.js"></script>
+		<script src="../data_ck.js"></script>
+		
+		
+		<script type="text/javascript">
+
+$(function () {
+    $('#container').highcharts('StockChart',{
+        chart: {
+            type: 'scatter',
+            zoomType: 'xy'
+        },
+        title: {
+            text: '身高与体重507比'
+        },
+        xAxis: {
+            title: {
+                text: 'Height (cm)'
+            },
+            startOnTick: true,
+            endOnTick: true,
+            showLastLabel: true
+        },
+        yAxis: {
+            title: {
+                text: 'Weight (kg)'
+            }
+        },
+        plotOptions: {
+            scatter: {
+                marker: {
+                    radius: 5,
+                    //lineWidth: 1,
+                    //lineColor:'rgb(100,100,100)',
+                    symbol:'circle',
+                    states: {
+                        hover: {
+                            enabled: true,
+                            lineColor: '#cacaca',
+                            lineWidth: 5
+                        },
+		                    select:{		
+		                    }
+                    }
+                },
+      
+                tooltip: {
+                    headerFormat: '<b>{series.name}</b><br>',
+                    pointFormat: '{point.x} cm, {point.y} kg'
+                }
+            }
+        },
+        series: [{
+            name: '女',
+            color: '#4572A7',
+            marker: {
+	            symbol:'square'
+	          },             
+            data: may20062
+
+        }, {
+            name: '男',
+            color: '#DB843D',
+            data: jun2006
+        }]
+    });
+    
+    var  mychart1 = $('#container').highcharts();
+    
+    mychart1.xAxis[0].addPlotLine({
+                         id:  'plot',
+                         value : 192 ,
+                         color : '#910000',
+                         dashStyle : 'shortdash',
+                         width : 1
+                      });
+                      
+    mychart1.yAxis[0].addPlotLine({
+                         id:  'plotsss',
+                         value : 62 ,
+                         color : '#910000',
+                         dashStyle : 'shortdash',
+                         width : 1
+                      });
+                                        
+                      
+});
+    
+
+		</script>
+	</head>
+	<body>
+<script src="../../js/highstock.js"></script>
+<script src="../../js/highcharts-more.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
+
+	</body>
+</html>
