@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+
+<script type="text/javascript" src="../jquery/js/jquery-1.10.2.min.js"></script>
+<script src="../../js/highstock.js"></script>
+<script src="../plugins/chart-plugins.js"></script>
+
+
+<script type="text/javascript">
+
+		var colorArr = ['#7cb5ec', '#434348', '#90ed7d', '#f7a35c', '#8085e9','#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1','#000000','#560f23'];
+	
+	$(function () {
+		
+		
+		
+            $('#container').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                subtitle: {
+                    text: 'Source: www.stepday.com'
+                },
+                xAxis: {
+                    categories: [
+                    'Jan',
+                    'Feb',
+                    'Mar',
+                    'Apr',
+                    'May',
+                    'Jun',
+                    'Jul',
+                    'Aug',
+                    'Sep',
+                    'Oct',
+                    'Nov',
+                    'Dec'
+                ]
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Rainfall (mm)'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                credits: {
+                    text: "www.stepday.com",
+                    href: "http://www.stepday.com",
+                    style: {
+                        color: "red"
+                    }
+                },
+                series: [{
+                    name: 'Tokyo',
+                    data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                }]
+            }, function (chart) {
+                SetEveryOnePointColor(chart);
+                console.log(chart)
+            });
+        });
+
+                //设置每一个数据点的颜色值
+        function SetEveryOnePointColor(chart) {            
+            //获得第一个序列的所有数据点
+            var pointsList = chart.series[0].points;
+            //遍历设置每一个数据点颜色
+            for (var i = 0; i < pointsList.length; i++) {
+                chart.series[0].points[i].update({
+                    color: {
+                        linearGradient: { x1: 0, y1: 0, x2: 1, y2: 0 }, //横向渐变效果 如果将x2和y2值交换将会变成纵向渐变效果
+                        stops: [
+                                    [0, Highcharts.Color(colorArr[i]).setOpacity(1).get('rgba')],
+                                    [0.5, 'rgb(0, 155, 0)'],
+                                    [1, Highcharts.Color(colorArr[i]).setOpacity(1).get('rgba')]
+                                ]  
+                    }
+                });
+            }
+				}
+    
+
+
+
+		</script>
+	</head>
+	<body>
+
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>
